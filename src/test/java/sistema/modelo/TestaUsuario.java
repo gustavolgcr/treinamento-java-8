@@ -2,11 +2,9 @@ package sistema.modelo;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 public class TestaUsuario {
 
@@ -50,12 +48,14 @@ public class TestaUsuario {
 		usuariosMutaveis.add(user5);
 		usuariosMutaveis.add(user6);
 		
+		
 		usuariosMutaveis.removeIf(u -> u.getPontos() > 160);
 		
 		usuariosMutaveis.sort(Comparator.comparingInt(Usuario::getPontos).thenComparing(Usuario::getNome));
 		
 		usuariosMutaveis.forEach(u -> System.out.println(u.getNome()));
 		
+		usuariosMutaveis.forEach(System.out::println);
 		
 	}
 }
